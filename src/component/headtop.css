@@ -1,0 +1,18 @@
+.logo{
+    display: flex;
+    border: 0;
+    width: 7.5%;
+}
+.htop{
+    height: 12.5%;
+    background-color: rgb(94, 198, 216);
+    padding-bottom: 1%;
+}
+.htop-h1{
+    margin-top: -5%;
+}
+.left-filter{
+    margin-top: -2%;
+    margin-left: 85%;
+    
+}
