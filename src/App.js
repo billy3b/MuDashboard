@@ -12,8 +12,7 @@ function App() {
       <HeaderTop/>
       <BrowserRouter>
       <Routes>
-          <Route path="/" element={<Overview />}/>
-          
+          <Route path="/" element={<Overview />}/> 
           <Route path="/products" element={<Product />} />
           <Route path="/customer" element={<Customer />} />
           <Route path="/region" element={<Region />} />
