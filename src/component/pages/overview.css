@@ -14,7 +14,7 @@
 
 /* src/component/pages/SalesOverviewCards.css */
 
-.dashboard {
+/* .dashboard {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,7 @@
   }
   
   .card {
-    background-color: white;
+    background-color: rgb(235, 247, 250);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -61,6 +61,36 @@
     font-size: 14px;
     border-radius: 5px;
     border: 1px dashed #ccc;
-  }
+  } */
+
+.tot-sales, .tot-profit, .aov, .new-rep{
+  display: inline-block;
+  margin-right: 0.6%;
+}
+.pro-loss{
+  display: inline-block;
+}
+.new-rep{
+  margin-top: 0.5%;
+  margin-bottom: 5%;
+
+}
+.big-crds{
+  display: inline;
+  position: relative;
+  top: 20px;
+}
+.seg-sal{
+  display: block;
+}
+.cat-sal, .seg-sal{
+  display: block;
+  position: absolute;
+  right: 2%;
+}
+.seg-sal{
+  bottom: 10%;
+}
+
   
   
