@@ -7,10 +7,10 @@ import YearFilter from "./yearfilter";
 export default function CardTemp(props){
     return(
 
-    <Card className={props.classs} style={{ width: '18rem', backgroundColor: "rgb(235, 247, 250)", borderRadius: "13px" }}>
+    <Card className={props.classs} style={{backgroundColor: "rgb(235, 247, 250)", borderRadius: "13px" }}>
       <Card.Body>
         <div  style={{display:'flex', gap:'10px'}}>
-          <Card.Title>{props.title}</Card.Title>
+          <Card.Title className="card-title">{props.title}</Card.Title>
           <YearFilter />
         </div>
         <Card.Text>

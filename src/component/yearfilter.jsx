@@ -3,7 +3,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default function yearFilter() {
   return (
-    <DropdownButton id="dropdown-basic-button" title="Year">
+    <DropdownButton className="year-tog" id="dropdown-basic-button" title="Year">
       <Dropdown.Item href="#/action-1">2015</Dropdown.Item>
       <Dropdown.Item href="#/action-2">2016</Dropdown.Item>
       <Dropdown.Item href="#/action-3">2017</Dropdown.Item>

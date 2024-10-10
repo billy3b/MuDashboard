@@ -5,7 +5,7 @@ import CardTemp from "../cardtemp";
 export default function Overview(){
     return(
         <div className="over">
-            <div className="dashboard">
+            
             <div className="cards-row">
                 <CardTemp classs="tot-sales" className="card-tt" title="Total Sales" body="$480K" isGraph ="False"/>
                 <CardTemp classs="tot-profit" className="card-tt" title="Total Profit" body="$48.8K" isGraph ="False"/>
@@ -19,7 +19,7 @@ export default function Overview(){
                     <CardTemp classs="cat-sal" className="card-tt" title="Category-wise Sales" body="Technology: 36%, Furniture: 33%, Office Supplies: 31%" isGraph ="True"/>
                 </div>
             </div>
-            </div>
+            
         </div>
     )
 }
