@@ -2,7 +2,7 @@ import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import"./pages/overview.css";
-import YearFilter from "./yearfilter";
+
 
 export default function CardTemp(props){
     return(
@@ -11,7 +11,7 @@ export default function CardTemp(props){
       <Card.Body>
         <div  style={{display:'flex', gap:'10px'}}>
           <Card.Title className="card-title">{props.title}</Card.Title>
-          <YearFilter />
+          
         </div>
         <Card.Text>
           {props.body}

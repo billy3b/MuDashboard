@@ -106,8 +106,8 @@
 }
 .year-tog{
   position: absolute;
-  top: 10%;
-  right: 35%;
+  top: 5%;
+  left: 10%;
 }
 /* .card-title{
   margin-left: 5%;

@@ -1,13 +1,19 @@
+import { useEffect, useState } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-export default function yearFilter() {
+export default function YearFilter({handleDropdownChange}) {
+  const[year, setYear] = useState();
+  function handleClick(yr){
+    setYear(yr)
+    handleDropdownChange(yr);
+  }
   return (
     <DropdownButton className="year-tog" id="dropdown-basic-button" title="Year">
-      <Dropdown.Item href="#/action-1">2015</Dropdown.Item>
-      <Dropdown.Item href="#/action-2">2016</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">2017</Dropdown.Item>
-      <Dropdown.Item href="#/action-3">2018</Dropdown.Item>
+      <Dropdown.Item onClick={()=>(handleClick(2015))}>2015</Dropdown.Item>
+      <Dropdown.Item onClick={()=>(handleClick(2016))} >2016</Dropdown.Item>
+      <Dropdown.Item onClick={()=>(handleClick(2017))} >2017</Dropdown.Item>
+      <Dropdown.Item onClick={()=>(handleClick(2018))} >2018</Dropdown.Item>
     </DropdownButton>
   );
 }
