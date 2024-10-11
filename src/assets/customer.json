@@ -1,0 +1,40 @@
+[
+    
+      {
+        "Year":"2015",
+        "ProfitConsumer": "$8.44k",
+        "ProfitCorporate": "$6.33k",
+        "ProfitHome": "$5.74k",
+        "ProfitMarginConsumer": "7.54%",
+        "ProfitMarginCorp": "10.24%",
+        "ProfitMarginHome": "19.03%"
+      },
+      {
+        "Year":"2016",
+        "ProfitConsumer": "$9.62k",
+        "ProfitCorporate": "$8.25k",
+        "ProfitHome": "$5.48k",
+        "ProfitMarginConsumer": "7.96%",
+        "ProfitMarginCorp": "15.07%",
+        "ProfitMarginHome": "13.57%"
+      },
+
+      {
+        "Year":"2017",
+        "ProfitConsumer": "$24.1k",
+        "ProfitCorporate": "$13.66kk",
+        "ProfitHomeOffice": "$4.56k",
+        "ProfitMarginConsumer": "15.43%",
+        "ProfitMarginCorp": "12.72%",
+        "ProfitMarginHome": "9.77%"
+      },
+      {
+        "Year":"2018",
+        "ProfitConsumer": "$23.8k",
+        "ProfitCorporate": "$4.62k",
+        "ProfitHome": "$15.1k",
+        "ProfitMarginConsumer": "14.69%",
+        "ProfitMarginCorp": "4.22%",
+        "ProfitMarginHome": "18.91%"
+      }
+]

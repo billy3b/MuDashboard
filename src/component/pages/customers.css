@@ -1,0 +1,27 @@
+.customer{ 
+    width: 100%;
+    height: 100%;
+}
+
+.tot-profit{
+    display: inline-block;
+    margin-right: 1.2%;
+    width: 12rem;
+  }
+
+.cards-row{
+    margin-top: 2.5%    
+  }
+
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    margin-top: 15px;
+  }
+
+.cus-graph {
+    width: 45%;
+    height: 45%;
+}
