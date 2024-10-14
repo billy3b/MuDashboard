@@ -73,16 +73,16 @@ export default function Customer(){
         <div className="customer">
             
             <div className="cards-row">
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit Consumer" body={profitCons} isGraph ="False"/>
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit Corporate" body={profitCorp} isGraph ="False"/>
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit Home Office" body={profitHome} isGraph ="False"/>
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit Margin Consumer" body={profitMCons} isGraph ="False"/>
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit MarginCorporate" body={profitMCorp} isGraph ="False"/>
-                <CardTemp classs="tot-profit" className="card-tt" title="Profit Margin Home Office" body={profitMHome} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit Consumer" body={profitCons} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit Corporate" body={profitCorp} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit Home Office" body={profitHome} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit Margin Consumer" body={profitMCons} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit MarginCorporate" body={profitMCorp} isGraph ="False"/>
+                <CardTemp className="card-tt" title="Profit Margin Home Office" body={profitMHome} isGraph ="False"/>
             </div>
             <div className="charts-container">
-                <CardTemp classs="cus-graph" className="card-tt" title="No. of Returning Customers" body={profitMHome} isGraph ="True"/>  
-                <CardTemp classs="cus-graph" className="card-tt" title="Customer Retention Rate" body={profitMHome} isGraph ="True"/>  
+                <CardTemp className="card-tt" title="No. of Returning Customers" body={profitMHome} isGraph ="True"/>  
+                <CardTemp className="card-tt" title="Customer Retention Rate" body={profitMHome} isGraph ="True"/>  
             </div>
 
             

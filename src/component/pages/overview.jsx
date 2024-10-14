@@ -3,8 +3,9 @@ import "./overview.css";
 import CardTemp from "../cardtemp";
 import YearFilter from "../yearfilter";
 import dataJson from "../../assets/jsonformatter.json";
+import axios from "axios";
 export default function Overview(){
-    console.log(dataJson)
+    //console.log(dataJson)
     const [year, setYear] = useState(2015);
     const[sales, setSales] = useState();
     const[profit, setProfit] = useState();
@@ -15,38 +16,65 @@ export default function Overview(){
     const handleDropdownChange = (value) => {
         setYear(value);
       };
-   useEffect(() => {
-     const fd = dataJson.filter((item) => {
-         return item.Year ==="2015";
-       });
-       let plz = fd[0]
-       console.log("please",plz.Sales)
-       setSales(plz.Sales)
-       setProfit(plz.Profit)
-       setAov(plz.AOV)
-   },[])
+
+    useEffect(() => {
+        const data = async () => {
+            try{
+                const res = await axios.get(`/api/overs/2015`);
+                // console.log("response",res);
+                const fd= res.data[0];
+                console.log("first res", fd)
+                setSales(fd.Sales)
+                setProfit(fd.Profit)
+                setAov(fd.AOV)
+            }catch(err){
+                console.log(err);
+            }
+        }
+        data()
+        //console.log("dat", data)
+    },[])
+//    useEffect(() => {
+//      const fd = dataJson.filter((item) => {
+//          return item.Year ==="2015";
+//        });
+//        let plz = fd[0]
+//        console.log("please",plz.Sales)
+//        setSales(plz.Sales)
+//        setProfit(plz.Profit)
+//        setAov(plz.AOV)
+//    },[])
       useEffect(() => {
 
         if (hasMounted.current) {
-            const filtered = dataJson.filter(item => item.Year === year.toString());
-            console.log("filll",filtered)
-            setFilteredDate(filtered)
-            setSales(filtered[0].Sales)
-            setProfit(filtered[0].Profit)
-            setAov(filtered[0].AOV)
+            const data = async () => {
+                try{
+                    const res = await axios.get(`/api/overs/${year}`);
+                    // console.log("response",res);
+                    const fd= res.data[0];
+                    console.log("backend", fd)
+                    setSales(fd.Sales)
+                    setProfit(fd.Profit)
+                    setAov(fd.AOV)
+                }catch(err){
+                    console.log(err);
+                }
+            }
+            data()
+            // const filtered = dataJson.filter(item => item.Year === year.toString());
+            //console.log("filll",data)
+            // setFilteredDate(filtered)
+            // setSales(filtered[0].Sales)
+            // setProfit(filtered[0].Profit)
+            // setAov(filtered[0].AOV)
 
           } else {
-            hasMounted.current = true; // Set to true after the first render
+            hasMounted.current = true;
         }
 
-        // const fd = dataJson.filter((item) => {
-     
-        //     return item.Year === year.toString();
-        //   });
-        //   setFilteredDate(fd);
           
       },[year])
-    //   useEffect(() => {
+//     //   useEffect(() => {
     //     if(hadMounted.current){
     //         console.log("dwdwd",filteredData)
     //         setSales(filteredData[0].Sales)
