@@ -17,7 +17,7 @@ function App() {
           <Route path="/customer" element={<Customer />} />
           <Route path="/region" element={<Region />} />
           
-        
+     
       </Routes>
     </BrowserRouter>
     </div>

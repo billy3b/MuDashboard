@@ -16,12 +16,11 @@ export default function CardTemp(props){
         <Card.Text>
           {props.body}
         </Card.Text>
-        {props.isGraph === "True"?
-                <Card.Text>
-                    Graph Placeholder
-                </Card.Text>:
-                <></>
-            }
+        {props.isGraph === "True" && props.children ? (
+            <div>
+                {props.children}
+            </div>
+            ) : null}
       </Card.Body>
     </Card>
   );
