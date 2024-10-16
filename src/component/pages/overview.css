@@ -135,9 +135,11 @@
 }
 .cards-row {
   display: flex;
-  justify-content: space-between;
+  
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-left: 10%;
+  
+
 }
 
 /* Individual cards styling (Total Sales, Profit, AOV) */
@@ -149,23 +151,42 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin-bottom: 20px;
+  
 }
-
+.tot-sales, .tot-profit{
+  margin-right: 2%;
+}
+.month{
+  width: 50%;
+}
 /* Sales and footfall chart container */
-.month-sales-chart,
-.footfall-chart {
-  width: 100%; /* Full width within the card */
+.month-sales-chart
+ {
+  
+
+  width: 55%; /* Full width within the card */
   height: 300px; /* Consistent height for charts */
   margin-top: 10px;
 }
 
-.big-crds {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+.footfall-chart{
+  width: 40%;
+  position: absolute;
+  top: 12%;
+  left: 57%;
 }
-
+.big-crds {
+  display: inline-block;
+  
+  position: relative;
+  top: -420px;
+  left: 30%;
+  flex-wrap: wrap;
+  
+}
+.top-prod{
+  width: 50%;
+}
 .new-rep, .pro-loss {
   width: 48%; 
   background-color: #ffffff;
@@ -177,6 +198,7 @@
 
 
 .right-crds {
+  margin-top:-20%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -194,9 +216,7 @@
 }
 
 /* Year toggle dropdown */
-.year-tog {
-  margin-bottom: 20px;
-}
+
 
 /* Consistent margins and padding for all cards */
 .card {
@@ -205,4 +225,15 @@
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+.over{
+  position: relative;
+}
+.year-tog{
+  position: absolute;
+  top: 1%;
+  
+}
+.cards-row{
+  
 }

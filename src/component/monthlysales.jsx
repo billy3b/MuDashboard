@@ -50,7 +50,7 @@ const MonthlySalesChart = ({ year }) => {
   }, [year]); // Re-run when the year changes
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={200} width={600}>
       <LineChart data={monthlySales}>
         <XAxis dataKey="month" />
         <YAxis />

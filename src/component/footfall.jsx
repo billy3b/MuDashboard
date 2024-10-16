@@ -36,7 +36,7 @@ const FootfallLineChart = ({ year }) => {
   }, [year]); // Re-run this effect whenever the year changes
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={180} width={450}>
       <LineChart
         data={footfallData}
         margin={{

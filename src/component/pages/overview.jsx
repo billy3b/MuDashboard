@@ -93,22 +93,28 @@ export default function Overview(){
     //   },[filteredData])
     return(
         <>
-        <YearFilter handleDropdownChange={handleDropdownChange} className="year-top"/>
+        
         <div className="over">
+        <YearFilter handleDropdownChange={handleDropdownChange} className="year-top"/>
                 {/* Header Cards */}
                 <div className="cards-row">
-                    <CardTemp classs="tot-sales" className="card-tt" title="Total Sales" body="$480k" isGraph="False" />
-                    <CardTemp classs="tot-profit" className="card-tt" title="Total Profit" body="$48.8k" isGraph="False" />
-                    <CardTemp classs="aov" className="card-tt" title="AOV" body="$64.6" isGraph="False" />
+                    <CardTemp classs="tot-sales" className="card-tt" title="Total Sales" body={sales} isGraph="False" />
+                    <CardTemp classs="tot-profit" className="card-tt" title="Total Profit" body={profit} isGraph="False" />
+                    <CardTemp classs="aov" className="card-tt" title="AOV" body={aov} isGraph="False" />
+                    {/* Segment-wise Sales and Category-wise Sales */}
+                
                 </div>
 
                 {/* Month-on-month Sales Chart */}
                 <CardTemp classs="month-sales-chart" title="Month-on-month Sales" isGraph="True">
                     <MonthlySalesChart year={year} />
                 </CardTemp>
+                <CardTemp classs="footfall-chart" title="Footfall per month" isGraph="True">
+                    <FootfallChart year={year} />
+                </CardTemp>
 
                 {/* Top Selling Products */}
-                <CardTemp title="Top Selling Products" isGraph="True">
+                <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
                     <TopSellingProd year={year} />
                 </CardTemp>
 
@@ -119,11 +125,8 @@ export default function Overview(){
                 </div>
 
                 {/* Footfall per Month */}
-                <CardTemp title="Footfall per month" isGraph="True">
-                    <FootfallChart year={year} />
-                </CardTemp>
+               
 
-                {/* Segment-wise Sales and Category-wise Sales */}
                 <div className="right-crds">
                     <CardTemp classs="seg-sal" title="Segment-wise Sales" isGraph="True">
                         <SegmentWiseSales year={year} />

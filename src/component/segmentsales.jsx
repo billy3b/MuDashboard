@@ -33,7 +33,7 @@ const SegmentWiseSales = ({ year }) => {
   }, [year]); // Re-run this effect whenever the year changes
 
   return (
-    <PieChart width={300} height={300}>
+    <PieChart width={300} height={350}>
       <Pie
         data={segmentData}
         nameKey="name"

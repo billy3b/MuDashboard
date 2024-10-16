@@ -12,11 +12,11 @@ const TopSellingProd = ({ year }) => {
     // Sort the products by quantity sold and pick the top 5
     const sortedProducts = filteredData
       .sort((a, b) => b.Quantity - a.Quantity)
-      .slice(0, 5); // Get the top 5 products
+      .slice(0, 3); // Get the top 5 products
 
     // Format the data for Recharts
     const formattedData = sortedProducts.map((item) => ({
-      name: item['Product Name'], // Product name
+      name: item['Product Name'].slice(0,17), // Product name
       quantity: item.Quantity, // Quantity sold
     }));
 
@@ -35,7 +35,7 @@ const TopSellingProd = ({ year }) => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend />
+        <Legend wrapperStyle={{ fontSize: '10px' }} />
         <Bar dataKey="quantity" fill="#8884d8" />
       </BarChart>
     </ResponsiveContainer>

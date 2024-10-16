@@ -33,7 +33,7 @@ const CategorySales = ({ year }) => {
   }, [year]); 
 
   return (
-    <PieChart width={300} height={300}>
+    <PieChart width={300} height={350}>
       <Pie
         data={categoryData}
         dataKey="value"
