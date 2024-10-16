@@ -1,54 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer,
 } from 'recharts';
-import salesData from '../assets/dataset.json'; // Import your dataset
-
+import salesData from '../assets/dataset.json';
+ 
 const MonthlySalesChart = ({ year }) => {
   const [monthlySales, setMonthlySales] = useState([]);
-
+ 
   // Mapping of month names to their respective order
   const monthOrder = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
+ 
   useEffect(() => {
     const processData = () => {
       // Filter sales data based on the selected year
       const filteredData = salesData.filter((item) => item.Year === year);
-
-      // Create an object to store the sales for each month
+ 
+      // object to store the sales for each month
       const salesByMonth = {};
-
+ 
       // Loop through the filtered sales data to aggregate sales month by month
       filteredData.forEach((item) => {
-        const month = item.MonthName; 
-        const monthYearKey = `${month} ${item.Year}`; 
-
-        if (salesByMonth[monthYearKey]) {
-          salesByMonth[monthYearKey] += item.Sales;
+        const month = item.MonthName;
+        if (salesByMonth[month]) {
+          salesByMonth[month] += item.Sales;
         } else {
-          salesByMonth[monthYearKey] = item.Sales;
+          salesByMonth[month] = item.Sales;
         }
       });
-
+      //console.log(salesByMonth)
+ 
       // Convert the aggregated data into an array and sort by month order
-      const formattedData = Object.keys(salesByMonth).map((monthYearKey) => {
-        const [month] = monthYearKey.split(' ');
-        return {
-          month: monthYearKey,
-          totalSales: salesByMonth[monthYearKey],
-          monthIndex: monthOrder.indexOf(month) // Use this to sort later
-        };
-      });
-
-      // Sort the data by the monthIndex
+      const formattedData = Object.keys(salesByMonth).map((month) => ({
+        month,
+        totalSales: salesByMonth[month],
+        monthIndex: monthOrder.indexOf(month)
+      }));
+ 
       formattedData.sort((a, b) => a.monthIndex - b.monthIndex);
-
+ 
       setMonthlySales(formattedData);
     };
-
+ 
     processData();
-  }, [year]); // Re-run when the year changes
-
+  }, [year]);
+ 
   return (
     <ResponsiveContainer width="100%" height={200}>
       <LineChart data={monthlySales}>
@@ -56,10 +51,10 @@ const MonthlySalesChart = ({ year }) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="totalSales" stroke="#8884d8" activeDot={{ r: 8 }} />
+        <Line type="monotone" dataKey="totalSales" />
       </LineChart>
     </ResponsiveContainer>
   );
 };
-
+ 
 export default MonthlySalesChart;
