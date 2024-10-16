@@ -33,7 +33,7 @@ const NewRepeatCustomer = ({ year }) => {
   }, [year]); 
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" width={240} height={290}>
       <PieChart>
         <Pie
           data={customerData}

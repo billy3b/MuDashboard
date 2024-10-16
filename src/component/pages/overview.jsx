@@ -117,21 +117,21 @@ export default function Overview(){
                     <FootfallChart year={year} />
                 </CardTemp>
 
-                {/* Top Selling Products */}
+                
                 <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
                     <TopSellingProd year={year} />
                 </CardTemp>
 
-                {/* New vs Repeat Customers and Profit vs Loss */}
+                
                 <div className="big-crds">
                     <CardTemp classs="new-rep" title="New vs Repeat Customers" isGraph="True">
-                        <NewRepeatCustomer year={year} />
+                        <NewRepeatCustomer classs = "pie" year={year} />
                     </CardTemp>
                     <CardTemp classs="pro-loss" title="Profit vs Loss" isGraph="True" >
                         <ProfitLossChart year={year} />
                     </CardTemp>
                 </div>
-
+                
                 <div className="right-crds">
                     <CardTemp classs="seg-sal" title="Segment-wise Sales" isGraph="True">
                         <SegmentWiseSales year={year} />
@@ -139,7 +139,7 @@ export default function Overview(){
                     <CardTemp classs="cat-sal" title="Category-wise Sales" isGraph="True">
                         <CategorySales year={year} />
                     </CardTemp>
-                </div>
+                </div> 
             </div>
         </>
     )

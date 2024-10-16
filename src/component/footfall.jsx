@@ -36,7 +36,7 @@ const FootfallChart = ({ year }) => {
   }, [year]);
 
   return (
-    <ResponsiveContainer width="100%" height={180} >
+    <ResponsiveContainer width="100%" height={190} >
       <LineChart
         data={footfallData}
         margin={{
@@ -44,7 +44,7 @@ const FootfallChart = ({ year }) => {
         }}
       >
         <XAxis dataKey="month" />
-        <YAxis label={{ value: "No. of Customers", angle: -90, position: 'insideLeft' }} />
+        <YAxis label={{ value: "Customers", angle: -90, position: 'insideLeft' }} />
         <Tooltip />
         <Legend />
         <Line type="monotone" dataKey="footfall" stroke="#8884d8" activeDot={{ r: 8 }} />
