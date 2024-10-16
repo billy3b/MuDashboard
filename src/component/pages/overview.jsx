@@ -9,6 +9,8 @@ import SegmentWiseSales from "../segmentsales";
 import CategorySales from "../categorysales";
 import TopSellingProd from "../topproducts";
 import FootfallChart from "../footfall";
+import ProfitLossChart from "../profitloss";
+import NewRepeatCustomer from "../NewRepeatCustomer";
 
 export default function Overview(){
     //console.log(dataJson)
@@ -109,6 +111,8 @@ export default function Overview(){
                 <CardTemp classs="month-sales-chart" title="Month-on-month Sales" isGraph="True">
                     <MonthlySalesChart year={year} />
                 </CardTemp>
+                
+                {/* Footfall per Month */}
                 <CardTemp classs="footfall-chart" title="Footfall per month" isGraph="True">
                     <FootfallChart year={year} />
                 </CardTemp>
@@ -120,12 +124,13 @@ export default function Overview(){
 
                 {/* New vs Repeat Customers and Profit vs Loss */}
                 <div className="big-crds">
-                    <CardTemp classs="new-rep" title="New vs Repeat Customers" isGraph="True" />
-                    <CardTemp classs="pro-loss" title="Profit vs Loss" isGraph="True" />
+                    <CardTemp classs="new-rep" title="New vs Repeat Customers" isGraph="True">
+                        <NewRepeatCustomer year={year} />
+                    </CardTemp>
+                    <CardTemp classs="pro-loss" title="Profit vs Loss" isGraph="True" >
+                        <ProfitLossChart year={year} />
+                    </CardTemp>
                 </div>
-
-                {/* Footfall per Month */}
-               
 
                 <div className="right-crds">
                     <CardTemp classs="seg-sal" title="Segment-wise Sales" isGraph="True">
