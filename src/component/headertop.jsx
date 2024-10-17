@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/logo.jfif";
+import logo from "../assets/mu-sigma-logo-1.png";
 import "./headtop.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 // import { Link } from "reactstrap";
@@ -10,7 +10,7 @@ export default function HeaderTop(){
             <h1 className="htop-h1">Superstore Sales Analysis</h1>
             <div className="left-filter">
                 <Dropdown>
-                    <Dropdown.Toggle className="tog" variant="success" id="dropdown-basic">
+                    <Dropdown.Toggle className="tog"  id="dropdown-basic">
                         Views
                     </Dropdown.Toggle>
 

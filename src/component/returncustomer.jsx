@@ -61,7 +61,7 @@ const ReturningCustomer = ({ year }) => {
 
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" height={200}>
       <BarChart
         data={returningCustomersData}
         margin={{
@@ -72,7 +72,7 @@ const ReturningCustomer = ({ year }) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="returningCustomers" fill="#8884d8" />
+        <Bar dataKey="returningCustomers" fill="#5ec6d8" />
       </BarChart>
     </ResponsiveContainer>
   );

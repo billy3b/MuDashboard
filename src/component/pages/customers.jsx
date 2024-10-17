@@ -71,22 +71,22 @@ export default function Customer(){
     //   },[filteredData])
     return(
         <>
-        <YearFilter handleDropdownChange={handleDropdownChange} className="year-top"/>
+        
         <div className="customer">
-            
+        <YearFilter handleDropdownChange={handleDropdownChange} className="year-cust"/>
             <div className="cards-row">
-                <CardTemp className="card-tt" title="Profit Consumer" body={profitCons} isGraph ="False"/>
-                <CardTemp className="card-tt" title="Profit Corporate" body={profitCorp} isGraph ="False"/>
-                <CardTemp className="card-tt" title="Profit Home Office" body={profitHome} isGraph ="False"/>
-                <CardTemp className="card-tt" title="Profit Margin Consumer" body={profitMCons} isGraph ="False"/>
-                <CardTemp className="card-tt" title="Profit MarginCorporate" body={profitMCorp} isGraph ="False"/>
-                <CardTemp className="card-tt" title="Profit Margin Home Office" body={profitMHome} isGraph ="False"/>
+                <CardTemp classs="pro-con" className="card-t" body="Profit Consumer" title={profitCons} isGraph ="False"/>
+                <CardTemp classs="pro-corp" className="card-t" body="Profit Corporate" title={profitCorp} isGraph ="False"/>
+                <CardTemp classs="pro-hom" className="card-t" body="Profit Home Office" title={profitHome} isGraph ="False"/>
+                <CardTemp classs="mar-con" className="card-t" body="Profit Margin Consumer" title={profitMCons} isGraph ="False"/>
+                <CardTemp classs="mar-corp" className="card-t" body="Profit Margin Corporate" title={profitMCorp} isGraph ="False"/>
+                <CardTemp classs="mar-hom" className="card-t" body="Profit Margin Home Office" title={profitMHome} isGraph ="False"/>
             </div>
             <div className="charts-container">
-                <CardTemp className="card-tt" title="No. of Returning Customers" body={profitMHome} isGraph ="True">
+                <CardTemp classs="ret-cust" className="card-t" title="No. of Returning Customers" isGraph ="True">
                   <ReturningCustomer year={year}/>  
                 </CardTemp >
-                <CardTemp className="card-tt" title="Customer Retention Rate" body={profitMHome} isGraph ="True">
+                <CardTemp classs = "ret-rate" className="card-t" title="Customer Retention Rate" isGraph ="True">
                     <CustomerRetention year={year}/>
                 </CardTemp>  
             </div>

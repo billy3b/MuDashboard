@@ -1,7 +1,8 @@
 .logo{
     display: flex;
     border: 0;
-    width: 7.5%;
+    width: 5%;
+    margin-left: 1%;
 }
 .htop{
     height: 12.5%;
@@ -17,8 +18,12 @@
     
 }
 .year-tog{
-    width: 0.1%;
+    margin-top: -12%;
+    background-color: #5ec6d8;
+    border: none;
 }
 .tog{
     margin-top: -12%;
+    background-color: #5ec6d8;
+    border: none;
 }

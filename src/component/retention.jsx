@@ -63,7 +63,7 @@ const CustomerRetention= ({ year }) => {
   }, [year]);
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="80%" height={220}>
       <PieChart>
         <Pie
           data={retentionData}
@@ -71,8 +71,8 @@ const CustomerRetention= ({ year }) => {
           nameKey="segment"
           cx="50%"
           cy="50%"
-          outerRadius={150}
-          fill="#8884d8"
+          outerRadius={74}
+          fill="#5ec6d8"
         >
           {retentionData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
