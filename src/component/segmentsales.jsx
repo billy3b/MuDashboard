@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
-import salesData from '../assets/dataset.json'; // Replace with the path to your dataset
+import salesData from '../assets/dataset.json'; 
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
@@ -30,16 +30,16 @@ const SegmentWiseSales = ({ year }) => {
     }));
 
     setSegmentData(formattedData);
-  }, [year]); // Re-run this effect whenever the year changes
+  }, [year]); 
 
   return (
-    <PieChart width={300} height={350}>
+    <PieChart width={300} height={270}>
       <Pie
         data={segmentData}
         nameKey="name"
         cx="50%"
         cy="50%"
-        outerRadius={150}
+        outerRadius={90}
         fill="#8884d8"
       >
         {segmentData.map((entry, index) => (
