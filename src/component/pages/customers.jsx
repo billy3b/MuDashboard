@@ -3,6 +3,8 @@ import CardTemp from "../cardtemp";
 import YearFilter from "../yearfilter";
 import "./customers.css";
 import csjson from "../../assets/customer.json"
+import ReturningCustomer from "../returncustomer";
+import CustomerRetention from "../retention";
 
 export default function Customer(){
     const [year, setYear] = useState(2015);
@@ -81,8 +83,12 @@ export default function Customer(){
                 <CardTemp className="card-tt" title="Profit Margin Home Office" body={profitMHome} isGraph ="False"/>
             </div>
             <div className="charts-container">
-                <CardTemp className="card-tt" title="No. of Returning Customers" body={profitMHome} isGraph ="True"/>  
-                <CardTemp className="card-tt" title="Customer Retention Rate" body={profitMHome} isGraph ="True"/>  
+                <CardTemp className="card-tt" title="No. of Returning Customers" body={profitMHome} isGraph ="True">
+                  <ReturningCustomer year={year}/>  
+                </CardTemp >
+                <CardTemp className="card-tt" title="Customer Retention Rate" body={profitMHome} isGraph ="True">
+                    <CustomerRetention year={year}/>
+                </CardTemp>  
             </div>
 
             

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import salesData from '../assets/dataset.json'; // Path to your dataset
+import salesData from '../assets/dataset.json'; // Import dataset
 
-const COLORS = ['#0088FE', '#FF8042']; // Colors for profit and loss
+// Correct color mapping: Orange for Profit, Blue for Loss
+const COLORS = ['#FF8042', '#0088FE']; 
 
 const ProfitLossChart = ({ year }) => {
   const [profitLossData, setProfitLossData] = useState([]);
@@ -11,35 +12,36 @@ const ProfitLossChart = ({ year }) => {
     // Filter the dataset by year
     const filteredData = salesData.filter((item) => item.Year === year);
 
+    // Initialize profit and loss totals
     let totalProfit = 0;
     let totalLoss = 0;
 
+    // Sum up profit and loss for the filtered data
     filteredData.forEach((item) => {
-      totalProfit += item.Profit;
-      totalLoss += item.Loss;
+      totalProfit += item.Profit; 
+      totalLoss += item.Loss; 
     });
 
+    // Use absolute value for loss to ensure correct pie chart rendering
     const formattedData = [
       { name: 'Profit', value: totalProfit },
-      { name: 'Loss', value: totalLoss }
+      { name: 'Loss', value: Math.abs(totalLoss) } 
     ];
 
     setProfitLossData(formattedData);
-  }, [year]); 
+  }, [year]); // Re-run when the year changes
 
   return (
     <ResponsiveContainer width="100%" height={320}>
       <PieChart>
         <Pie
           data={profitLossData}
-          cx="50%" // Center X
-          cy="50%" // Center Y
-          startAngle={180} // Starting at 180 degrees
-          endAngle={0} // Ending at 0 degrees (half circle)
-          innerRadius={60} // Adjust for inner space
-          outerRadius={120} // Adjust for outer circle size
+          cx="50%" 
+          cy="50%"
+          innerRadius={60} 
+          outerRadius={120} 
           fill="#8884d8"
-          dataKey="value"
+          dataKey="value" 
         >
           {profitLossData.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
