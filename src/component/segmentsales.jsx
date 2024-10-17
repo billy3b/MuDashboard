@@ -33,13 +33,13 @@ const SegmentWiseSales = ({ year }) => {
   }, [year]); 
 
   return (
-    <PieChart width={300} height={270}>
+    <PieChart width={250} height={270}>
       <Pie
         data={segmentData}
         nameKey="name"
-        cx="50%"
-        cy="50%"
-        outerRadius={90}
+        cx="40%"
+        cy="47%"
+        outerRadius={80}
         fill="#8884d8"
       >
         {segmentData.map((entry, index) => (
@@ -47,7 +47,10 @@ const SegmentWiseSales = ({ year }) => {
         ))}
       </Pie>
       <Tooltip />
-      <Legend />
+      <Legend layout="horizontal" 
+        align="left" 
+        verticalAlign="bottom" 
+        wrapperStyle={{ paddingBottom:'50px' }} />
     </PieChart>
   );
 };

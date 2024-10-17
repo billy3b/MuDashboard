@@ -37,9 +37,9 @@ const ProfitLossChart = ({ year }) => {
         <Pie
           data={profitLossData}
           cx="50%" 
-          cy="50%"
-          innerRadius={60} 
-          outerRadius={90} 
+          cy="80%"
+          innerRadius={40} 
+          outerRadius={60} 
           startAngle={180}  // Start at 180 degrees (top left)
           endAngle={0} 
           fill="#8884d8"
@@ -49,7 +49,11 @@ const ProfitLossChart = ({ year }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend />
+        <Legend 
+        layout="horizontal" 
+        align="left" 
+        verticalAlign="bottom" 
+        wrapperStyle={{ paddingBottom:'100px' }}/>
         <Tooltip />
         {/* <Legend /> */}
       </PieChart>

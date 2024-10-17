@@ -145,6 +145,7 @@
 
 /* Individual cards styling (Total Sales, Profit, AOV) */
 .card-tt {
+  
   width: 30%; 
   background-color: #ffffff;
   padding: 20px;
@@ -154,10 +155,16 @@
   
   
 }
+.but{
+  position: absolute;
+  top: -7.4%;
+  left: 10%;
+
+}
 .tot-sales, .tot-profit, .aov{
   margin-right: 2%;
-  width: 18%;
-  height: 90px;
+  width: 13%;
+  height: 100px;
   align-items: center;
   justify-content: center;
   
@@ -169,28 +176,20 @@
 .month-sales-chart
  {
   
-  width:47%; /* Full width within the card */
-  height: 300px; /* Consistent height for charts */
+  width:42%; /* Full width within the card */
+  height: 250px; /* Consistent height for charts */
   
 }
 
 .footfall-chart{
-  width: 46%;
+  width: 42%;
   position: absolute;
-  top: 36.5%;
-  left: 1.3%;
+  top: 19%;
+  left: 3.2%;
+  height: 35%;
 }
-.big-crds {
-  display: inline-block;
-  width: 100%;
-  top: -420px;
-  left: 30%;
-  flex-wrap: wrap;
-  height: 500px;
-  padding: 10px;
-  
-}
-.new-rep, .pro-loss {
+
+/* .new-rep, .pro-loss {
   width: 24%; 
   position: absolute;
   left: 1%;
@@ -200,7 +199,7 @@
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-}
+} */
 
 .top-prod{
   position: absolute;
@@ -209,6 +208,11 @@
   margin-top: 5%;
   width: 50%;
   height: 390px;
+}
+.month-sales-chart{
+  position: absolute;
+  top: 57%;
+  left: 3%;
 }
 /* .new-rep{
   position: absolute;
@@ -226,22 +230,29 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  
 }
 
 .new-rep{
+  
+  width: 22%;
   position: relative;
-  top: 70px;
-  margin-left: 48%;
+  top: -120px;
+  height: 250px;
+  margin-left: 47%;
 }
 .pro-loss{
-  width: 27%;
+  width: 23%;
   position: relative;
-  top: -190px;
+  top: -390px;
+  height: 250px;
   margin-left: 73%;
 }
+.year-top{
+  
+}
 .seg-sal, .cat-sal {
-  width: 40%; 
+  width: 25%; 
   /* background-color: #ffffff; */
   padding: 10px;
   border-radius: 10px;
@@ -251,12 +262,14 @@
   /* margin-bottom: 20px; */
 }
 .seg-sal{
-  position: relative;
-  top: 40px;
+  position: absolute;
+  top: 290px;
+  left: 73%;
 }
 .cat-sal{
-  position: relative;
-  top: 40px;
+  position: absolute;
+  top: 290px;
+  left: 47%;
 }
 /* Year toggle dropdown */
 
@@ -273,6 +286,7 @@
 .over{
   position: relative;
 }
+
 .year-tog{
   
   position: absolute;

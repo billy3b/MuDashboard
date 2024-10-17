@@ -97,16 +97,25 @@ export default function Overview(){
         <>
         
         <div className="over">
+            <div className="but">
         <YearFilter handleDropdownChange={handleDropdownChange} className="year-top"/>
+               </div>
                 {/* Header Cards */}
                 <div className="cards-row">
-                    <CardTemp classs="tot-sales" className="card-tt" title="Total Sales" body={sales} isGraph="False" />
-                    <CardTemp classs="tot-profit" className="card-tt" title="Total Profit" body={profit} isGraph="False" />
-                    <CardTemp classs="aov" className="card-tt" title="AOV" body={aov} isGraph="False" />
+                    <CardTemp classs="tot-sales" className="card-tt" body="Total Sales" title={sales} isGraph="False" />
+                    <CardTemp classs="tot-profit" className="card-tt" body="Total Profit" title={profit} isGraph="False" />
+                    <CardTemp classs="aov" className="card-tt" body="AOV" title={aov} isGraph="False" />
                     {/* Segment-wise Sales and Category-wise Sales */}
                 
                 </div>
-
+                <div className="big-crds">
+                    <CardTemp classs="new-rep" title="New vs Repeat Customers" isGraph="True">
+                        <NewRepeatCustomer classs = "pie" year={year} />
+                    </CardTemp>
+                    <CardTemp classs="pro-loss" title="Profit vs Loss" isGraph="True" >
+                        <ProfitLossChart year={year} />
+                    </CardTemp>
+                </div>
                 {/* Month-on-month Sales Chart */}
                 <CardTemp classs="month-sales-chart" title="Month-on-month Sales" isGraph="True">
                     <MonthlySalesChart year={year} />
@@ -118,28 +127,21 @@ export default function Overview(){
                 </CardTemp>
 
                 
-                <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
+                {/* <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
                     <TopSellingProd year={year} />
-                </CardTemp>
+                </CardTemp> */}
 
                 
-                <div className="big-crds">
-                    <CardTemp classs="new-rep" title="New vs Repeat Customers" isGraph="True">
-                        <NewRepeatCustomer classs = "pie" year={year} />
-                    </CardTemp>
-                    <CardTemp classs="pro-loss" title="Profit vs Loss" isGraph="True" >
-                        <ProfitLossChart year={year} />
-                    </CardTemp>
-                </div>
                 
-                <div className="right-crds">
+                
+                
                     <CardTemp classs="seg-sal" title="Segment-wise Sales" isGraph="True">
                         <SegmentWiseSales year={year} />
                     </CardTemp>
                     <CardTemp classs="cat-sal" title="Category-wise Sales" isGraph="True">
                         <CategorySales year={year} />
                     </CardTemp>
-                </div> 
+                
             </div>
         </>
     )

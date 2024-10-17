@@ -33,14 +33,14 @@ const NewRepeatCustomer = ({ year }) => {
   }, [year]); 
 
   return (
-    <ResponsiveContainer width={240} height={230}>
+    <ResponsiveContainer width={160} height={230}>
       <PieChart>
         <Pie
           data={customerData}
-          cx="50%" 
-          cy="50%" 
-          innerRadius={60} 
-          outerRadius={90} 
+          cx="55%" 
+          cy="97%" 
+          innerRadius={30} 
+          outerRadius={50} 
           startAngle={180}  // Start at 180 degrees (top left)
           endAngle={0} 
           fill="#8884d8"
@@ -50,7 +50,11 @@ const NewRepeatCustomer = ({ year }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend />
+        <Legend
+        layout="horizontal" 
+        align="left" 
+        verticalAlign="bottom" 
+        wrapperStyle={{paddingBottom:'100px'}} />
         <Tooltip />
       </PieChart>
     </ResponsiveContainer>
