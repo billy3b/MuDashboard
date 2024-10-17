@@ -33,14 +33,14 @@ const CategorySales = ({ year }) => {
   }, [year]); 
 
   return (
-    <PieChart width={300} height={350}>
+    <PieChart width={300} height={270}>
       <Pie
         data={categoryData}
         dataKey="value"
         nameKey="name"
         cx="50%"
         cy="50%"
-        outerRadius={150}
+        outerRadius={90}
         fill="#8884d8"
       >
         {categoryData.map((entry, index) => (

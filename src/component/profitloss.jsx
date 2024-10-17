@@ -29,17 +29,19 @@ const ProfitLossChart = ({ year }) => {
     ];
 
     setProfitLossData(formattedData);
-  }, [year]); // Re-run when the year changes
+  }, [year]); 
 
   return (
-    <ResponsiveContainer width="100%" height={320}>
+    <ResponsiveContainer width={260} height={210}>
       <PieChart>
         <Pie
           data={profitLossData}
           cx="50%" 
           cy="50%"
           innerRadius={60} 
-          outerRadius={120} 
+          outerRadius={90} 
+          startAngle={180}  // Start at 180 degrees (top left)
+          endAngle={0} 
           fill="#8884d8"
           dataKey="value" 
         >
@@ -47,8 +49,9 @@ const ProfitLossChart = ({ year }) => {
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip />
         <Legend />
+        <Tooltip />
+        {/* <Legend /> */}
       </PieChart>
     </ResponsiveContainer>
   );
