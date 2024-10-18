@@ -11,7 +11,7 @@ const MonthlySalesChart = ({ year }) => {
   const monthOrder = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
  
   useEffect(() => {
-    const processData = () => {
+    
       // Filter sales data based on the selected year
       const filteredData = salesData.filter((item) => item.Year === year);
  
@@ -39,9 +39,7 @@ const MonthlySalesChart = ({ year }) => {
       formattedData.sort((a, b) => a.monthIndex - b.monthIndex);
  
       setMonthlySales(formattedData);
-    };
- 
-    processData();
+      
   }, [year]);
  
   return (
