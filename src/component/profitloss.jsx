@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import salesData from '../assets/dataset.json'; // Import dataset
+import salesData from '../assets/dataset.json'; 
 
-// Correct color mapping: Orange for Profit, Blue for Loss
-const COLORS = ['#FF8042', '#0088FE']; 
+const COLORS = ['#00C49F', '#FF0000']; 
 
 const ProfitLossChart = ({ year }) => {
   const [profitLossData, setProfitLossData] = useState([]);
@@ -54,7 +53,6 @@ const ProfitLossChart = ({ year }) => {
         verticalAlign="bottom" 
         wrapperStyle={{ paddingBottom:'100px' }}/>
         <Tooltip />
-        {/* <Legend /> */}
       </PieChart>
     </ResponsiveContainer>
   );
