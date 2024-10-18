@@ -6,7 +6,7 @@ const ReturningCustomer = ({ year }) => {
   const [returningCustomersData, setReturningCustomersData] = useState([]);
 
   useEffect(() => {
-    const processData = () => {
+    
       // Filter the dataset by year
       const filteredData = salesData.filter((item) => item.Year === year);
 
@@ -53,9 +53,7 @@ const ReturningCustomer = ({ year }) => {
       }));
 
       setReturningCustomersData(formattedData);
-    };
 
-    processData();
   }, [year]); 
   
 

@@ -126,12 +126,7 @@ export default function Overview(){
                     <FootfallChart year={year} />
                 </CardTemp>
 
-                
-                {/* <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
-                    <TopSellingProd year={year} />
-                </CardTemp> */}
 
-                
                 
                 
                 
@@ -140,6 +135,9 @@ export default function Overview(){
                     </CardTemp>
                     <CardTemp classs="cat-sal" title="Category-wise Sales" isGraph="True">
                         <CategorySales year={year} />
+                    </CardTemp>
+                    <CardTemp classs="top-prod" title="Top Selling Products" isGraph="True">
+                        <TopSellingProd year={year} />
                     </CardTemp>
                 
             </div>

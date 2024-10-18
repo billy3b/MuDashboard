@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import salesData from '../assets/dataset.json'; // Adjust the path to your dataset
+import salesData from '../assets/dataset.json'; 
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28']; // Colors for different segments
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28']; 
 
 const CustomerRetention= ({ year }) => {
   const [retentionData, setRetentionData] = useState([]);

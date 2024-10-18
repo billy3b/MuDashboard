@@ -127,6 +127,9 @@
   margin-bottom: 20px;
   padding: 20px;
 } */
+body {
+  background-color: #f0f4f8;
+}
 
 .over {
   position: relative;
@@ -136,7 +139,6 @@
 }
 .cards-row {
   display: flex;
-  
   flex-wrap: wrap;
   margin-left: 10%;
   
@@ -203,10 +205,10 @@
 
 .top-prod{
   position: absolute;
-  top: 5.5%;
-  left: 49%;
+  top: 87%; 
+  left: 3%;
   margin-top: 5%;
-  width: 50%;
+  width: 95%;
   height: 390px;
 }
 .month-sales-chart{

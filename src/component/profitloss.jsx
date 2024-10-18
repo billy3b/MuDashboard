@@ -22,10 +22,9 @@ const ProfitLossChart = ({ year }) => {
       totalLoss += item.Loss; 
     });
 
-    // Use absolute value for loss to ensure correct pie chart rendering
     const formattedData = [
       { name: 'Profit', value: totalProfit },
-      { name: 'Loss', value: Math.abs(totalLoss) } 
+      { name: 'Loss', value: totalLoss } 
     ];
 
     setProfitLossData(formattedData);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import salesData from '../assets/dataset.json'; 
 
 const TopSellingProd = ({ year }) => {
@@ -12,11 +12,11 @@ const TopSellingProd = ({ year }) => {
     // Sort the products by quantity sold and pick the top 5
     const sortedProducts = filteredData
       .sort((a, b) => b.Quantity - a.Quantity)
-      .slice(0, 3); 
+      .slice(0, 5); 
 
     // Format the data for Recharts
     const formattedData = sortedProducts.map((item) => ({
-      name: item['Product Name'].slice(0,17), 
+      name: item['Product Name'].slice(0,19), 
       quantity: item.Quantity,
     }));
 
@@ -31,12 +31,11 @@ const TopSellingProd = ({ year }) => {
           top: 20, right: 30, left: 20, bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
         <Legend wrapperStyle={{ fontSize: '10px' }} />
-        <Bar dataKey="quantity" fill="#8884d8" />
+        <Bar dataKey="quantity" fill="#5ec6d8"/>
       </BarChart>
     </ResponsiveContainer>
   );
