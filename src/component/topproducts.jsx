@@ -9,18 +9,29 @@ const TopSellingProd = ({ year }) => {
     // Filter the dataset by year
     const filteredData = salesData.filter((item) => item.Year === year);
 
-    // Sort the products by quantity sold and pick the top 5
-    const sortedProducts = filteredData
-      .sort((a, b) => b.Quantity - a.Quantity)
+    // object to store the sales totals by product name
+    const salesByProduct = {};
+
+    // Loop through the filtered data and sum sales by product name
+    filteredData.forEach((item) => {
+      const productName = item['Product Name'];
+      if (salesByProduct[productName]) {
+        salesByProduct[productName] += item.Sales; 
+      } else {
+        salesByProduct[productName] = item.Sales; // Initialize sales for new product
+      }
+    });
+
+    // Convert the salesByProduct object into an array and sort by sales value
+    const sortedProducts = Object.keys(salesByProduct)
+      .map((productName) => ({
+        name: productName.slice(0, 20), 
+        sales: salesByProduct[productName], 
+      }))
+      .sort((a, b) => b.sales - a.sales) 
       .slice(0, 5); 
 
-    // Format the data for Recharts
-    const formattedData = sortedProducts.map((item) => ({
-      name: item['Product Name'].slice(0,19), 
-      quantity: item.Quantity,
-    }));
-
-    setTopProducts(formattedData);
+    setTopProducts(sortedProducts);
   }, [year]); 
 
   return (
@@ -35,7 +46,7 @@ const TopSellingProd = ({ year }) => {
         <YAxis />
         <Tooltip />
         <Legend wrapperStyle={{ fontSize: '10px' }} />
-        <Bar dataKey="quantity" fill="#5ec6d8"/>
+        <Bar dataKey="sales" fill="#5ec6d8" /> 
       </BarChart>
     </ResponsiveContainer>
   );
