@@ -171,6 +171,10 @@ body {
   justify-content: center;
   
 }
+.arrow-png{
+  width: 30%;
+  margin-left: 0%;
+}
 .month{
   width: 50%;
 }

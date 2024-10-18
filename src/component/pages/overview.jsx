@@ -11,7 +11,7 @@ import TopSellingProd from "../topproducts";
 import FootfallChart from "../footfall";
 import ProfitLossChart from "../profitloss";
 import NewRepeatCustomer from "../NewRepeatCustomer";
-
+import overview from "../../assets/overview.json";
 export default function Overview(){
     //console.log(dataJson)
     const [year, setYear] = useState(2015);
@@ -21,6 +21,9 @@ export default function Overview(){
     const [filteredData, setFilteredDate] = useState();
     const hasMounted = useRef(false); // Ref to track first render
     const hadMounted = useRef(false);
+    const [salesArrow, setSalesArrow] = useState();
+    const [profitArrow, setProfitArrow] = useState();
+    const [aovArrow, setAovArrow] = useState();
     const handleDropdownChange = (value) => {
         setYear(value);
       };
@@ -40,6 +43,14 @@ export default function Overview(){
             }
         }
         data()
+        const fd = overview.filter((item) => {
+          return item.Year ==="2015";
+        });
+        let plz = fd[0]
+        console.log("please",plz.Sales)
+        setSalesArrow(plz.Sales)
+        setProfitArrow(plz.Profit)
+        setAovArrow(plz.AOV)
         //console.log("dat", data)
     },[])
 //    useEffect(() => {
@@ -69,12 +80,12 @@ export default function Overview(){
                 }
             }
             data()
-            // const filtered = dataJson.filter(item => item.Year === year.toString());
-            //console.log("filll",data)
-            // setFilteredDate(filtered)
-            // setSales(filtered[0].Sales)
-            // setProfit(filtered[0].Profit)
-            // setAov(filtered[0].AOV)
+            const filtered = overview.filter(item => item.Year === year.toString());
+            console.log("arrow",filtered)
+             
+             setSalesArrow(filtered[0].Sales)
+             setProfitArrow(filtered[0].Profit)
+             setAovArrow(filtered[0].AOV)
 
           } else {
             hasMounted.current = true;
@@ -102,9 +113,9 @@ export default function Overview(){
                </div>
                 {/* Header Cards */}
                 <div className="cards-row">
-                    <CardTemp classs="tot-sales" className="card-tt" body="Total Sales" title={sales} isGraph="False" />
-                    <CardTemp classs="tot-profit" className="card-tt" body="Total Profit" title={profit} isGraph="False" />
-                    <CardTemp classs="aov" className="card-tt" body="AOV" title={aov} isGraph="False" />
+                    <CardTemp isArrow="True" arrow = {salesArrow} classs="tot-sales" className="card-tt" body="Total Sales" title={sales} a isGraph="False" />
+                    <CardTemp isArrow="True" arrow = {profitArrow} classs="tot-profit" className="card-tt" body="Total Profit" title={profit} isGraph="False" />
+                    <CardTemp isArrow="True" arrow = {aovArrow}  classs="aov" className="card-tt" body="AOV" title={aov} isGraph="False" />
                     {/* Segment-wise Sales and Category-wise Sales */}
                 
                 </div>

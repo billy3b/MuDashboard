@@ -1,0 +1,30 @@
+[
+    
+    {
+      "Year": "2015",
+      "Sales": "dash",
+      "Profit": "dash",
+      "AOV": "dash"
+    }
+  ,
+    {
+      "Year": "2016",
+      "Sales": "down",
+      "Profit": "up",
+      "AOV": "down"
+    }
+  ,
+    {
+      "Year": "2017",
+      "Sales": "up",
+      "Profit": "up",
+      "AOV": "up"
+    },
+    {
+      "Year":"2018",
+      "Sales": "up",
+      "Profit": "up",
+      "AOV":"down"
+    }
+
+]

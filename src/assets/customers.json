@@ -1,0 +1,40 @@
+[
+    
+    {
+      "Year":"2015",
+      "ProfitConsumer": "dash",
+      "ProfitCorporate": "dash",
+      "ProfitHome": "dash",
+      "ProfitMarginConsumer": "dash",
+      "ProfitMarginCorp": "dash",
+      "ProfitMarginHome": "dash"
+    },
+    {
+      "Year":"2016",
+      "ProfitConsumer": "up",
+      "ProfitCorporate": "up",
+      "ProfitHome": "down",
+      "ProfitMarginConsumer": "up",
+      "ProfitMarginCorp": "up",
+      "ProfitMarginHome": "down"
+    },
+
+    {
+      "Year":"2017",
+      "ProfitConsumer": "up",
+      "ProfitCorporate": "up",
+      "ProfitHomeOffice": "down",
+      "ProfitMarginConsumer": "up",
+      "ProfitMarginCorp": "down",
+      "ProfitMarginHome": "down"
+    },
+    {
+      "Year":"2018",
+      "ProfitConsumer": "down",
+      "ProfitCorporate": "down",
+      "ProfitHome": "up",
+      "ProfitMarginConsumer": "down",
+      "ProfitMarginCorp": "down",
+      "ProfitMarginHome": "up"
+    }
+]

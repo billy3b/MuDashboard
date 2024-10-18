@@ -17,8 +17,6 @@ export default function HeaderTop(){
                     <Dropdown.Menu>
                         <Dropdown.Item tag="a" href="/">Overview</Dropdown.Item>
                         <Dropdown.Item tag="a" href="/customer">Customer</Dropdown.Item>
-                        <Dropdown.Item tag="a" href="/products">Product</Dropdown.Item>
-                        <Dropdown.Item tag="a" href="/region">Region</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
             </div>
